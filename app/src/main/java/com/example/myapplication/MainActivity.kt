@@ -4,22 +4,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import com.example.myapplication.base.BaseActivity
 import com.example.myapplication.bean.Person
 import com.example.myapplication.bean.Student
 import com.example.myapplication.bean2.CellPhone
 import com.example.myapplication.bean2.Singleton
 import com.example.myapplication.bean2.Student2
 import com.example.myapplication.listener.Study
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.HashMap
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     val TAG = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<Button>(R.id.test).setOnClickListener {
+        test.setOnClickListener {
             student()
         }
     }
@@ -45,8 +47,8 @@ class MainActivity : AppCompatActivity() {
 //        val stu5 = Student2("张三",18)
 
 //        Singleton.test()
-        doStudy(null)
-        Lambda()
+//        doStudy(null)
+//        Lambda()
     }
 
     private fun doStudy(study: Study?){
@@ -104,8 +106,7 @@ class MainActivity : AppCompatActivity() {
         val anyresult = list3.any { it.length<5 } //是否存在5个字母以内的单词
 
         val allresult = list3.all { it.length<5 } //是否都是5个字母以内的单词
-        Log.d(TAG, "anyResult is " + anyresult + ", allResult is " +
-                allresult)
+        Log.d(TAG, "anyResult is $anyresult, allResult is$allresult")
 
         main()
     }
@@ -115,11 +116,12 @@ class MainActivity : AppCompatActivity() {
     var content: String? = "hello"
     fun main() {
         if (content != null) {
-            printUpperCase()
+            printUpperCase(num = 2)//通过键值对的⽅式来传参
         }
     }
-    private fun printUpperCase() {
+    private fun printUpperCase(str:String = "hello",num: Int) {//默认值
         val upperCase = content!!.toUpperCase()
         println(upperCase)
+        println("str is $str, num is $num")
     }
 }

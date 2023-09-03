@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'  //这个插件会根据布局⽂件中定义的控件id⾃动⽣成⼀个 具有相同名称的变量
+
 }
 
 android {
