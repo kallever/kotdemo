@@ -1,7 +1,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#00ff00"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
@@ -10,5 +9,11 @@
         android:layout_gravity="center_horizontal"
         android:textSize="24sp"
         android:text="This is right fragment"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:text="text"
         />
 </LinearLayout>

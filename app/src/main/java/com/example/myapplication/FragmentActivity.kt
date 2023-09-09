@@ -44,12 +44,15 @@ class FragmentActivity : AppCompatActivity() {
     }
     lateinit var timeChange:MyBroatcast
 
+    //显示广播
     fun send(){
         val intent = Intent("com.example.broadcasttest.MY_BROADCAST")
         intent.setPackage(packageName)
-        sendBroadcast(intent)
+//        sendBroadcast(intent)
+        sendOrderedBroadcast(intent,null)//发送有序广播
     }
 
+    //动态注册
     fun register(){
         val intentFilter= IntentFilter()
         intentFilter.addAction("android.intent.action.TIME_TICK")

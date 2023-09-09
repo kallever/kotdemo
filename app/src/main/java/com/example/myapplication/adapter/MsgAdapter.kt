@@ -7,8 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.bean.Msg
-import com.example.myapplication.listener.LeftViewHolder
-import com.example.myapplication.listener.RightViewHolder
+import com.example.myapplication.viewholder.LeftViewHolder
+import com.example.myapplication.viewholder.RightViewHolder
 
 class MsgAdapter(val msgList: List<Msg>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>()  {

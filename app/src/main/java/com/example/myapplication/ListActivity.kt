@@ -33,10 +33,10 @@ class ListActivity : AppCompatActivity() {
 
         }
         initListView()
-      initRecycleView()
+        initRecycleView()
     }
 
-    private fun initListView(){
+    private fun initListView() {
         val adapter = FruitAdapter(this, R.layout.fruit_item, fruitList)
         listview.adapter = adapter
 
@@ -48,17 +48,17 @@ class ListActivity : AppCompatActivity() {
         }
     }
 
-    private fun initRecycleView(){
+    private fun initRecycleView() {
 //        val layoutManager =LinearLayoutManager(this)
 //        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
-        val layoutManager = StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL)
-        recycle.layoutManager=layoutManager
+        val layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
+        recycle.layoutManager = layoutManager
         val adapter = FruitAdapter2(fruitList)
         recycle.adapter = adapter
     }
 
-    private fun getRandomLength(str:String):String{
+    private fun getRandomLength(str: String): String {
         val n = (1..20).random()
-        return  str.times(n)
+        return str.times(n)
     }
 }
